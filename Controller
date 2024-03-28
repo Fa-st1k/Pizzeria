@@ -1,0 +1,37 @@
+#Controller
+from model import add_employee, removing_employees, get_all_employees
+from view import display_menu, display_all_employees, display_success, display_error
+import json
+
+def main():
+    while True:
+        display_menu()
+        choice = input("\nSelect an action (1-4): ")
+
+        if choice == "1":
+            The_database = {}
+            The_database['FIO'] = input("Enter FIO: ")
+            The_database['age'] = int(input("Enter age: "))
+            The_database["weight"] = input("Enter weight: ")
+            The_database["ID"] = input("Enter the desired employee ID")
+            with open('The_database', 'w') as f:
+                json.dump(The_database, f)
+            display_success("the employee was successfully accepted.")
+        elif choice == "2":
+            get_all_employees()
+        elif choice == "3":
+            index = int(input("Enter the employee's number for dismissal: ")) - 1
+            removed_employees = removing_employees(index)
+
+            if removed_employees:
+                display_success(f"FIO {removed_employees['age']} {removed_employees['weight']} deleted.")
+            else:
+                display_error("Invalid employee number.")
+        elif choice == "4":
+            print("Exiting the program.")
+            break
+        else:
+            display_error("Wrong choice. Please choose from this")
+
+if name == "main":
+    main()
