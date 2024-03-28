@@ -1,0 +1,67 @@
+#Model
+All_workers = []
+
+def add_employee(FIO, age, weight):
+    worker = {"FIO": FIO, "age": age, "weight": weight}
+    All_workers.append(worker)
+def removing_employees(index):
+    if 0 <= index < len(All_workers):
+        removing_employees = All_workers.pop(index)
+        return removing_employees
+    else:
+        return None
+
+def Editing_employees (Editing_employees1):
+    print(All_workers)
+    print('Who do you want to change?')
+    name = int(input("Введите ID"))
+    def editing_cart_1(editing_cart):
+        print('Кола колличество:', Basket.count('Кола'), "Цена:", Basket.count('Кола') * 100)
+        print('Шаурма колличество:', Basket.count('Шаурма'), "Цена:", Basket.count('Шаурма') * 280)
+        print('Пицца колличество:', Basket.count('Пицца'), "Цена:", Basket.count('Пицца') * 350)
+        Total_price = Basket.count('Кола') * 100 + Basket.count('Шаурма') * 280 + Basket.count('Пицца') * 350
+        print("Итого: ",Total_price)
+        print("Хотите изменить колличество Колы?\n 0 - уменьшить , 1 - оставить прежним, 2 - увеличить")
+        number = int(input())
+        if number == 0:
+            number_1 = int(input("Впешите колличество на которое хотите уменьшить: "))
+            while number_1 > 0:
+                Basket.remove('Кола')
+                number_1 = number_1 - 1
+        if number == 2:
+            number_1 = int(input("Впешите колличество на которое хотите увеличить: "))
+            while number_1 > 0:
+                Basket.append('Кола')
+                number_1 = number_1 - 1
+        print("Хотите изменить колличество Шаурмы?\n 0 - уменьшить , 1 - оставить прежним, 2 - увеличить")
+        number = int(input())
+        if number == 0:
+            number_1 = int(input("Впешите колличество на которое хотите уменьшить: "))
+            while number_1 > 0:
+                Basket.remove('Шаурма')
+                number_1 = number_1 - 1
+        if number == 2:
+            number_1 = int(input("Впешите колличество на которое хотите увеличить: "))
+            while number_1 > 0:
+                Basket.append('Шаурма')
+                number_1 = number_1 - 1
+        print("Хотите изменить колличество Пиццы?\n 0 - уменьшить , 1 - оставить прежним, 2 - увеличить")
+        number = int(input())
+        if number == 0:
+            number_1 = int(input("Впешите колличество на которое хотите уменьшить: "))
+            while number_1 > 0:
+                Basket.remove('Пицца')
+                number_1 = number_1 - 1
+        if number == 2:
+            number_1 = int(input("Впешите колличество на которое хотите увеличить: "))
+            while number_1 > 0:
+                Basket.append('Пицца')
+                number_1 = number_1 - 1
+        print('Кола колличество:', Basket.count('Кола'), "Цена:", Basket.count('Кола') * 100)
+        print('Шаурма колличество:', Basket.count('Шаурма'), "Цена:", Basket.count('Шаурма') * 280)
+        print('Пицца колличество:', Basket.count('Пицца'), "Цена:", Basket.count('Пицца') * 350)
+        Total_price = Basket.count('Кола') * 100 + Basket.count('Шаурма') * 280 + Basket.count('Пицца') * 350
+        print("Итого: ", Total_price)
+
+def get_all_shoes():
+    return All_workers
