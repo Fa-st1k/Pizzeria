@@ -1,0 +1,17 @@
+#Vieu
+def display_menu():
+    print("1 - Add an employee")
+    print("2 - View all employees")
+    print("3 - Dismiss an employee")
+    print("4 - Become bankrupt and fire everyone")
+
+def display_all_shoes():
+    print("\nList of employees:")
+    for i, Worker in enumerate(shoe_inventory):
+            print(f"{i+1}. {Worker['FIO']}, AGE: {Worker['age']}, Weight: {Worker['C']}")
+
+def display_success(message):
+    print(f"\nSuccessfully: {message}")
+
+def display_error(message):
+    print(f"\nMistake: {message}")
